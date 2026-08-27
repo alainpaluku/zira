@@ -1,0 +1,16 @@
+import React from "react"
+import { Loader2 } from "../../lib/hero-icons-compat"
+import { cn } from "../../lib/utils"
+
+function Spinner({ className, ...props }: React.ComponentProps<"svg">) {
+  return (
+    <Loader2
+      role="status"
+      aria-label="Loading"
+      className={cn("size-4 animate-spin", className)}
+      {...props}
+    />
+  )
+}
+
+export { Spinner }

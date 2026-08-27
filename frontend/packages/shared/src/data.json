@@ -1,0 +1,677 @@
+{
+  "users": [
+    {
+      "id": "mod-1",
+      "name": "Modérateur ZIRA",
+      "email": "moderateur@zira-invest.com",
+      "role": "moderateur",
+      "status": "active",
+      "title": "Responsable Conformité et Risques",
+      "bio": "Supervision réglementaire, analyse KYC et validation des campagnes d'equity crowdfunding sur ZIRA Invest.",
+      "skills": ["Conformité OHADA", "Analyse Financière", "KYC / AML", "Due Diligence"],
+      "joinedAt": "2024-01-10T08:00:00Z"
+    },
+    {
+      "id": "dev-user-1",
+      "name": "Moussa Diakité",
+      "email": "moussa.diakite@agrisahel.com",
+      "role": "porteur",
+      "status": "active",
+      "companyName": "AgriBio Sahel",
+      "title": "CEO et Fondateur",
+      "bio": "Ingénieur agronome diplômé de l'INP-HB, 8 ans d'expérience dans l'irrigation connectée et la résilience agricole en milieu sahélien.",
+      "skills": ["Agronomie", "IoT Agricole", "Gestion de Projet", "Financement Rural"],
+      "type": "morale",
+      "description": "Entreprise innovante spécialisée dans le déploiement de serres solaires automatisées pour maraîchers en Afrique de l'Ouest.",
+      "joinedAt": "2024-02-01T09:00:00Z"
+    },
+    {
+      "id": "inv-user-1",
+      "name": "Amina Ndour",
+      "email": "amina.ndour@invest-diaspora.org",
+      "role": "investisseur",
+      "status": "active",
+      "title": "Business Angel Diaspora Congolaise",
+      "bio": "Directrice d'investissement basée à Paris, passionnée par l'impact investing et le financement des champions tech à Kinshasa.",
+      "skills": ["Venture Capital", "Impact Investing", "Fintech", "Agritech"],
+      "joinedAt": "2024-02-10T14:30:00Z"
+    },
+    {
+      "id": "inv-user-2",
+      "name": "Jean-Paul Mukendi",
+      "email": "jp.mukendi@kinshasa-ventures.cd",
+      "role": "investisseur",
+      "status": "active",
+      "title": "Investisseur Privé et Entrepreneur",
+      "bio": "Fondateur de solutions logistiques en RDC et investisseur actif dans les PME à forte croissance à Kinshasa.",
+      "skills": ["Logistique", "Commerce International", "M et A"],
+      "joinedAt": "2024-03-05T11:15:00Z"
+    },
+    {
+      "id": "inv-user-3",
+      "name": "Khadija Ba",
+      "email": "khadija.ba@kinshasa-angels.cd",
+      "role": "investisseur",
+      "status": "active",
+      "title": "Angels Club Kinshasa et Fintech Advocate",
+      "bio": "Investisseuse d'impact spécialisée dans les technologies agricoles et l'inclusion financière féminine en RDC.",
+      "skills": ["Impact Finance", "Agritech", "Microfinance"],
+      "joinedAt": "2024-03-06T09:00:00Z"
+    },
+    {
+      "id": "inv-user-4",
+      "name": "Marc Touré",
+      "email": "marc.toure@rdc-capital.cd",
+      "role": "investisseur",
+      "status": "active",
+      "title": "Senior Portfolio Manager",
+      "bio": "Gestionnaire de fonds de capital développement dédié aux PME de RDC.",
+      "skills": ["Corporate Finance", "Due Diligence", "Governance"],
+      "joinedAt": "2024-03-07T14:20:00Z"
+    },
+    {
+      "id": "inv-user-5",
+      "name": "David Mensah",
+      "email": "david.mensah@kin-ventures.cd",
+      "role": "investisseur",
+      "status": "active",
+      "title": "Tech Angel et Bâtisseur d'Écosystème",
+      "bio": "Entrepreneur tech et investisseur actif dans la fintech en RDC et l'e-santé.",
+      "skills": ["Fintech", "HealthTech", "Scale-up"],
+      "joinedAt": "2024-03-08T10:10:00Z"
+    },
+    {
+      "id": "inv-user-6",
+      "name": "Sarah Diallo",
+      "email": "sarah.diallo@congo-seed.cd",
+      "role": "investisseur",
+      "status": "active",
+      "title": "Seed Partner et Investisseur Climat",
+      "bio": "Investissements d'amorçage dans les technologies solaires et d'énergie propre en RDC.",
+      "skills": ["CleanTech", "Climate Adaptation", "ESG"],
+      "joinedAt": "2024-03-09T16:45:00Z"
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-1",
+      "porteurId": "dev-user-1",
+      "name": "AgriBio Sahel - Serres Solaires Connectées",
+      "logo": "https://images.unsplash.com/photo-1592417817098-8f3d6eb22521?w=150&auto=format&fit=crop&q=80",
+      "poster": "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=800&auto=format&fit=crop&q=80",
+      "shortDescription": "Déploiement de micro-serres solaires automatisées pour augmenter de 300% le rendement maraîcher en milieu sahélien.",
+      "sector": "AgriTech",
+      "targetMarket": "Coopératives agricoles, maraîchers et PME agroalimentaires (Sénégal, Mali, Niger)",
+      "videoUrl": "https://www.youtube.com/watch?v=kYJvB1l4wX8",
+      "team": [
+        { "id": "tm-1", "name": "Moussa Diakité", "role": "CEO et Agronome" },
+        { "id": "tm-2", "name": "Fatou Sow", "role": "Directrice Technique IoT" }
+      ],
+      "equityBreakdown": { "porteur": 75, "investors": 15, "available": 10 },
+      "fundraising": {
+        "targetAmountUSD": 85000,
+        "equityPercent": 15,
+        "minInvestment": 500,
+        "maxInvestment": 15000,
+        "raisedAmount": 52000
+      },
+      "status": "active",
+      "createdAt": "2024-03-01T10:00:00Z"
+    },
+    {
+      "id": "proj-2",
+      "porteurId": "dev-user-1",
+      "name": "PaySahel - Micro-paiements Transfrontaliers",
+      "logo": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=150&auto=format&fit=crop&q=80",
+      "poster": "https://images.unsplash.com/photo-1556742049-0a67e557b447?w=800&auto=format&fit=crop&q=80",
+      "shortDescription": "Infrastructure de paiement sans friction permettant aux commerçants transfrontaliers d'échanger en devises locales instantanément.",
+      "sector": "FinTech",
+      "targetMarket": "Commerçants informels et corridors commerciaux CEDEAO",
+      "videoUrl": "",
+      "team": [
+        { "id": "tm-3", "name": "Ibrahim Diallo", "role": "CTO et Architecte Fintech" },
+        { "id": "tm-4", "name": "Aminata Traoré", "role": "Head of Growth" }
+      ],
+      "equityBreakdown": { "porteur": 70, "investors": 20, "available": 10 },
+      "fundraising": {
+        "targetAmountUSD": 120000,
+        "equityPercent": 20,
+        "minInvestment": 1000,
+        "maxInvestment": 25000,
+        "raisedAmount": 96000
+      },
+      "status": "active",
+      "createdAt": "2024-02-15T09:30:00Z"
+    },
+    {
+      "id": "proj-3",
+      "porteurId": "dev-user-1",
+      "name": "SunCold Logistics - Chaîne du froid solaire",
+      "logo": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=150&auto=format&fit=crop&q=80",
+      "poster": "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=800&auto=format&fit=crop&q=80",
+      "shortDescription": "Chambres froides mobiles fonctionnant 100% à l'énergie solaire pour préserver les récoltes de denrées périssables.",
+      "sector": "GreenTech",
+      "targetMarket": "Producteurs maraîchers et poissonneries côtières",
+      "videoUrl": "",
+      "team": [{ "id": "tm-5", "name": "Ousmane Ba", "role": "Ingénieur Énergie" }],
+      "equityBreakdown": { "porteur": 80, "investors": 12, "available": 8 },
+      "fundraising": {
+        "targetAmountUSD": 60000,
+        "equityPercent": 12,
+        "minInvestment": 300,
+        "maxInvestment": 10000,
+        "raisedAmount": 34000
+      },
+      "status": "active",
+      "createdAt": "2024-03-10T14:00:00Z"
+    },
+    {
+      "id": "proj-4",
+      "porteurId": "dev-user-1",
+      "name": "MedConnect Africa - Télémédecine Rurale",
+      "logo": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=150&auto=format&fit=crop&q=80",
+      "poster": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop&q=80",
+      "shortDescription": "Bornes médicales connectées par satellite avec diagnostics IA pour les dispensaires enclavés.",
+      "sector": "HealthTech",
+      "targetMarket": "Centres de santé ruraux et mutuelles de santé (RDC, Cameroun)",
+      "videoUrl": "",
+      "team": [
+        { "id": "tm-6", "name": "Dr. Chantal Mukendi", "role": "Médecin Chef et Co-fondatrice" },
+        { "id": "tm-7", "name": "Alain N'Kosi", "role": "Lead Systèmes Embarqués" }
+      ],
+      "equityBreakdown": { "porteur": 72, "investors": 18, "available": 10 },
+      "fundraising": {
+        "targetAmountUSD": 110000,
+        "equityPercent": 18,
+        "minInvestment": 500,
+        "maxInvestment": 20000,
+        "raisedAmount": 67500
+      },
+      "status": "active",
+      "createdAt": "2024-03-12T11:00:00Z"
+    },
+    {
+      "id": "proj-5",
+      "porteurId": "dev-user-1",
+      "name": "EduKazi - Plateforme de Formation Pratique",
+      "logo": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=150&auto=format&fit=crop&q=80",
+      "poster": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop&q=80",
+      "shortDescription": "Formations aux métiers du numérique adaptées au faible débit et monétisables par micro-certifications certifiées.",
+      "sector": "EdTech",
+      "targetMarket": "Jeunes diplômés et PME en transition numérique en Afrique francophone",
+      "videoUrl": "",
+      "team": [
+        { "id": "tm-8", "name": "Bakary Keita", "role": "Directeur Pédagogique" },
+        { "id": "tm-9", "name": "Rokia Sanogo", "role": "Product Manager" }
+      ],
+      "equityBreakdown": { "porteur": 78, "investors": 14, "available": 8 },
+      "fundraising": {
+        "targetAmountUSD": 75000,
+        "equityPercent": 14,
+        "minInvestment": 250,
+        "maxInvestment": 12000,
+        "raisedAmount": 41000
+      },
+      "status": "active",
+      "createdAt": "2024-03-14T16:20:00Z"
+    }
+  ],
+  "investments": [
+    {
+      "id": "inv-101",
+      "projectId": "proj-1",
+      "investorId": "inv-user-1",
+      "investorName": "Amina Ndour",
+      "investorEmail": "amina.ndour@invest-diaspora.org",
+      "amountUSD": 15000,
+      "equityReceived": 2.65,
+      "date": "2024-03-02T15:00:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "inv-102",
+      "projectId": "proj-1",
+      "investorId": "inv-user-2",
+      "investorName": "Jean-Paul Kaboré",
+      "investorEmail": "jp.kabore@abidjan-ventures.ci",
+      "amountUSD": 12000,
+      "equityReceived": 2.12,
+      "date": "2024-03-04T11:20:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "inv-103",
+      "projectId": "proj-1",
+      "investorId": "inv-user-3",
+      "investorName": "Khadija Ba",
+      "investorEmail": "khadija.ba@dakar-angels.sn",
+      "amountUSD": 15000,
+      "equityReceived": 2.65,
+      "date": "2024-03-06T09:30:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "inv-104",
+      "projectId": "proj-1",
+      "investorId": "inv-user-4",
+      "investorName": "Marc Touré",
+      "investorEmail": "marc.toure@ivoire-capital.com",
+      "amountUSD": 10000,
+      "equityReceived": 1.76,
+      "date": "2024-03-10T14:15:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "inv-105",
+      "projectId": "proj-2",
+      "investorId": "inv-user-1",
+      "investorName": "Amina Ndour",
+      "investorEmail": "amina.ndour@invest-diaspora.org",
+      "amountUSD": 25000,
+      "equityReceived": 4.17,
+      "date": "2024-03-08T10:30:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "inv-106",
+      "projectId": "proj-2",
+      "investorId": "inv-user-2",
+      "investorName": "Jean-Paul Kaboré",
+      "investorEmail": "jp.kabore@abidjan-ventures.ci",
+      "amountUSD": 20000,
+      "equityReceived": 3.33,
+      "date": "2024-03-09T16:00:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "inv-107",
+      "projectId": "proj-2",
+      "investorId": "inv-user-5",
+      "investorName": "David Mensah",
+      "investorEmail": "david.mensah@ghana-ventures.com",
+      "amountUSD": 25000,
+      "equityReceived": 4.17,
+      "date": "2024-03-11T13:45:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "inv-108",
+      "projectId": "proj-2",
+      "investorId": "inv-user-6",
+      "investorName": "Sarah Diallo",
+      "investorEmail": "sarah.diallo@sahel-seed.org",
+      "amountUSD": 26000,
+      "equityReceived": 4.33,
+      "date": "2024-03-13T08:20:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "inv-109",
+      "projectId": "proj-3",
+      "investorId": "inv-user-2",
+      "investorName": "Jean-Paul Kaboré",
+      "investorEmail": "jp.kabore@abidjan-ventures.ci",
+      "amountUSD": 10000,
+      "equityReceived": 2.00,
+      "date": "2024-03-10T15:00:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "inv-110",
+      "projectId": "proj-3",
+      "investorId": "inv-user-1",
+      "investorName": "Amina Ndour",
+      "investorEmail": "amina.ndour@invest-diaspora.org",
+      "amountUSD": 8000,
+      "equityReceived": 1.60,
+      "date": "2024-03-12T11:30:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "inv-111",
+      "projectId": "proj-3",
+      "investorId": "inv-user-3",
+      "investorName": "Khadija Ba",
+      "investorEmail": "khadija.ba@dakar-angels.sn",
+      "amountUSD": 10000,
+      "equityReceived": 2.00,
+      "date": "2024-03-13T14:10:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "inv-112",
+      "projectId": "proj-3",
+      "investorId": "inv-user-4",
+      "investorName": "Marc Touré",
+      "investorEmail": "marc.toure@ivoire-capital.com",
+      "amountUSD": 6000,
+      "equityReceived": 1.20,
+      "date": "2024-03-14T09:40:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "inv-113",
+      "projectId": "proj-4",
+      "investorId": "inv-user-1",
+      "investorName": "Amina Ndour",
+      "investorEmail": "amina.ndour@invest-diaspora.org",
+      "amountUSD": 10000,
+      "equityReceived": 1.64,
+      "date": "2024-03-12T17:00:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "inv-114",
+      "projectId": "proj-4",
+      "investorId": "inv-user-2",
+      "investorName": "Jean-Paul Kaboré",
+      "investorEmail": "jp.kabore@abidjan-ventures.ci",
+      "amountUSD": 15000,
+      "equityReceived": 2.45,
+      "date": "2024-03-13T10:15:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "inv-115",
+      "projectId": "proj-4",
+      "investorId": "inv-user-5",
+      "investorName": "David Mensah",
+      "investorEmail": "david.mensah@ghana-ventures.com",
+      "amountUSD": 20000,
+      "equityReceived": 3.27,
+      "date": "2024-03-14T12:00:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "inv-116",
+      "projectId": "proj-4",
+      "investorId": "inv-user-6",
+      "investorName": "Sarah Diallo",
+      "investorEmail": "sarah.diallo@sahel-seed.org",
+      "amountUSD": 22500,
+      "equityReceived": 3.68,
+      "date": "2024-03-15T09:45:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "inv-117",
+      "projectId": "proj-5",
+      "investorId": "inv-user-2",
+      "investorName": "Jean-Paul Kaboré",
+      "investorEmail": "jp.kabore@abidjan-ventures.ci",
+      "amountUSD": 12000,
+      "equityReceived": 2.24,
+      "date": "2024-03-14T16:30:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "inv-118",
+      "projectId": "proj-5",
+      "investorId": "inv-user-1",
+      "investorName": "Amina Ndour",
+      "investorEmail": "amina.ndour@invest-diaspora.org",
+      "amountUSD": 9000,
+      "equityReceived": 1.68,
+      "date": "2024-03-15T11:00:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "inv-119",
+      "projectId": "proj-5",
+      "investorId": "inv-user-3",
+      "investorName": "Khadija Ba",
+      "investorEmail": "khadija.ba@dakar-angels.sn",
+      "amountUSD": 10000,
+      "equityReceived": 1.87,
+      "date": "2024-03-15T14:40:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "inv-120",
+      "projectId": "proj-5",
+      "investorId": "inv-user-4",
+      "investorName": "Marc Touré",
+      "investorEmail": "marc.toure@ivoire-capital.com",
+      "amountUSD": 10000,
+      "equityReceived": 1.87,
+      "date": "2024-03-15T16:50:00Z",
+      "status": "completed"
+    }
+  ],
+  "kycRequests": [
+    {
+      "id": "kyc-1",
+      "userId": "inv-user-2",
+      "userName": "Jean-Paul Kaboré",
+      "userEmail": "jp.kabore@abidjan-ventures.ci",
+      "submittedAt": "2024-03-05T11:20:00Z",
+      "type": "investisseur",
+      "documents": [
+        {
+          "document_type": "Passeport / CNI",
+          "document_url": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&auto=format&fit=crop&q=80"
+        },
+        {
+          "document_type": "Justificatif de domicile",
+          "document_url": "https://images.unsplash.com/photo-1450133064473-71024230f91b?w=600&auto=format&fit=crop&q=80"
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "kyc-2",
+      "userId": "dev-user-1",
+      "userName": "Moussa Diakité",
+      "userEmail": "moussa.diakite@agrisahel.com",
+      "submittedAt": "2024-02-01T09:15:00Z",
+      "type": "porteur",
+      "documents": [
+        {
+          "document_type": "RCCM / Registre du Commerce",
+          "document_url": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&auto=format&fit=crop&q=80"
+        },
+        {
+          "document_type": "Statuts certifiés",
+          "document_url": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&auto=format&fit=crop&q=80"
+        }
+      ],
+      "status": "approved"
+    }
+  ],
+  "moderationActivity": [
+    {
+      "id": "act-1",
+      "date": "2024-03-01",
+      "action": "project_validated",
+      "target": "proj-1",
+      "targetName": "AgriBio Sahel",
+      "by": "mod-1",
+      "byEmail": "moderateur@zira-invest.com",
+      "details": "Dossier financier et conformité technique validés."
+    },
+    {
+      "id": "act-2",
+      "date": "2024-02-15",
+      "action": "project_validated",
+      "target": "proj-2",
+      "targetName": "PaySahel",
+      "by": "mod-1",
+      "byEmail": "moderateur@zira-invest.com",
+      "details": "Conformité de la licence et cap table approuvées."
+    },
+    {
+      "id": "act-3",
+      "date": "2024-02-01",
+      "action": "kyc_approved",
+      "target": "dev-user-1",
+      "targetName": "Moussa Diakité",
+      "by": "mod-1",
+      "byEmail": "moderateur@zira-invest.com",
+      "details": "Vérification RCCM et pièce d'identité confirmées."
+    }
+  ],
+  "blogPosts": [
+    {
+      "id": "post-1",
+      "slug": "guide-ultime-levee-de-fonds-startup-afrique",
+      "title": "Guide Ultime : Réussir sa levée de fonds en equity crowdfunding en Afrique",
+      "excerpt": "Découvrez les étapes indispensables pour structurer votre pitch, séduire les investisseurs régionaux et sécuriser vos premiers financements sur ZIRA Invest.",
+      "content": "<h2>Introduction au Financement Participatif en Afrique</h2><p>La levée de fonds en equity crowdfunding s'impose comme une alternative majeure aux financements bancaires traditionnels en Afrique subsaharienne. Avec un écosystème en pleine mutation, les porteurs de projets innovants disposent d'opportunités inédites pour mobiliser du capital auprès d'investisseurs locaux et de la diaspora.</p><h3>1. Préparer une Valorisation Réaliste</h3><p>L'une des erreurs les plus fréquentes commises par les jeunes pousses est de surévaluer leur valorisation initiale. Sur ZIRA Invest, les investisseurs apprécient la transparence et les modèles financiers adossés à des métriques réelles (MRR, CAC, LTV).</p><h3>2. Structurer sa Data Room</h3><p>Une Data Room complète renforce immédiatement la crédibilité d'un projet auprès des modérateurs et des investisseurs.</p>",
+      "category": "Entrepreneuriat",
+      "author": {
+        "name": "Dr. Amadou Kouamé",
+        "role": "Expert en Capital Risque et Co-fondateur ZIRA",
+        "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80"
+      },
+      "publishedAt": "2026-08-15",
+      "readTime": "6 min",
+      "image": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80",
+      "featured": true,
+      "tags": ["Levée de fonds", "Equity", "Startup", "Diaspora", "Afrique"]
+    },
+    {
+      "id": "post-2",
+      "slug": "agritech-revolution-agriculture-durable-rdc",
+      "title": "AgriTech : Comment l'innovation technologique transforme l'agribusiness en RDC",
+      "excerpt": "De la traçabilité des récoltes aux solutions d'irrigation solaires, analyse des projets agricoles les plus attractifs pour les investisseurs en 2026.",
+      "content": "<h2>L'Agriculture au Cœur de la Souveraineté Économique</h2><p>L'Afrique de l'Ouest et Centrale possède plus de 60% des terres arables non cultivées au monde. En RDC et dans la région des Grands Lacs, les startups AgriTech réinventent les chaînes de valeur agricoles.</p>",
+      "category": "AgriTech",
+      "author": {
+        "name": "Sarah Mwamba",
+        "role": "Analyste Senior AgriTech",
+        "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80"
+      },
+      "publishedAt": "2026-08-10",
+      "readTime": "4 min",
+      "image": "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1200&q=80",
+      "featured": false,
+      "tags": ["AgriTech", "Agribusiness", "Innovation", "Durabilité"]
+    },
+    {
+      "id": "post-3",
+      "slug": "fintech-inclusion-financiere-paiements-transfrontaliers",
+      "title": "FinTech et Mobile Money : Booster l'inclusion financière par le crowdfunding",
+      "excerpt": "L'intégration transparente du Mobile Money (M-Pesa, Orange Money, Airtel Money) démocratise l'investissement participatif pour tous les citoyens.",
+      "content": "<h2>Le Mobile Money comme Levier d'Investissement Direct</h2><p>Grâce à la convergence entre Mobile Money et plateformes de mise en relation comme ZIRA Invest, investir dans une PME locale ne nécessite plus d'avoir un compte bancaire international.</p>",
+      "category": "FinTech",
+      "author": {
+        "name": "Christian Ilunga",
+        "role": "Lead Tech et Architecte Sécurité",
+        "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
+      },
+      "publishedAt": "2026-08-04",
+      "readTime": "5 min",
+      "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
+      "featured": true,
+      "tags": ["FinTech", "Mobile Money", "Inclusion Financière", "Crowdfunding"]
+    },
+    {
+      "id": "post-4",
+      "slug": "conformite-kyc-protection-investisseurs-zira",
+      "title": "Conformité KYC et Modération : Comment ZIRA protège investisseurs et porteurs",
+      "excerpt": "Focus sur notre processus rigoureux de vérification d'identité, de filtrage anti-blanchiment et de validation des projets par notre équipe de modération.",
+      "content": "<h2>Un Cadre de Confiance Rapproché</h2><p>La confiance est le pilier central de la plateforme ZIRA Invest. Notre équipe de modération applique une charte stricte de vérification documentaire et légale avant toute publication de projet.</p>",
+      "category": "Réglementation",
+      "author": {
+        "name": "Nathalie Bakanza",
+        "role": "Responsable Conformité et KYC",
+        "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80"
+      },
+      "publishedAt": "2026-07-28",
+      "readTime": "4 min",
+      "image": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1200&q=80",
+      "featured": false,
+      "tags": ["KYC", "Conformité", "Sécurité", "Modération"]
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif-1",
+      "userId": "dev-user-1",
+      "universe": "porteur",
+      "title": "Investissement reçu",
+      "message": "Awa Ndiaye a investi 5 000 $ dans votre projet AfriPay X.",
+      "createdAt": "2026-08-24T06:30:00Z",
+      "read": false,
+      "type": "investment",
+      "link": "/porteur/projets/proj-1"
+    },
+    {
+      "id": "notif-2",
+      "userId": "dev-user-1",
+      "universe": "porteur",
+      "title": "KYC validé avec succès",
+      "message": "Votre dossier de vérification d'identité et RCCM a été approuvé par la modération ZIRA.",
+      "createdAt": "2026-08-23T14:15:00Z",
+      "read": true,
+      "type": "kyc",
+      "link": "/porteur/profil"
+    },
+    {
+      "id": "notif-3",
+      "userId": "dev-user-1",
+      "universe": "porteur",
+      "title": "Projet validé et en ligne",
+      "message": "Votre campagne AfriPay X a franchi 65% de son objectif de financement.",
+      "createdAt": "2026-08-22T09:00:00Z",
+      "read": false,
+      "type": "project",
+      "link": "/porteur/projets/proj-1"
+    },
+    {
+      "id": "notif-4",
+      "userId": "dev-user-2",
+      "universe": "investisseur",
+      "title": "Investissement confirmé",
+      "message": "Votre souscription de 10 000 $ dans CleanEnergy Solar a été enregistrée avec succès.",
+      "createdAt": "2026-08-24T05:20:00Z",
+      "read": false,
+      "type": "investment",
+      "link": "/investisseur/wallet"
+    },
+    {
+      "id": "notif-5",
+      "userId": "dev-user-2",
+      "universe": "investisseur",
+      "title": "Nouveau projet à haut potentiel",
+      "message": "BioPharma Africa (HealthTech) vient de lancer sa levée de fonds de 300 000 $.",
+      "createdAt": "2026-08-23T11:45:00Z",
+      "read": false,
+      "type": "project",
+      "link": "/investisseur/explorer"
+    },
+    {
+      "id": "notif-6",
+      "userId": "dev-user-2",
+      "universe": "investisseur",
+      "title": "Statut KYC Vérifié",
+      "message": "Votre profil investisseur est désormais certifié et éligible aux tickets institutionnels.",
+      "createdAt": "2026-08-21T16:00:00Z",
+      "read": true,
+      "type": "kyc",
+      "link": "/investisseur/profil"
+    },
+    {
+      "id": "notif-7",
+      "userId": "mod-1",
+      "universe": "moderation",
+      "title": "Nouveau projet en attente de modération",
+      "message": "Le projet LogiRoute Africa a été soumis pour revue et validation de conformité.",
+      "createdAt": "2026-08-24T07:10:00Z",
+      "read": false,
+      "type": "project",
+      "link": "/moderateur/projets"
+    },
+    {
+      "id": "notif-8",
+      "userId": "mod-1",
+      "universe": "moderation",
+      "title": "Nouvelle demande KYC soumise",
+      "message": "Ibrahim Traoré a déposé de nouvelles pièces justificatives (RCCM & Passeport).",
+      "createdAt": "2026-08-24T06:00:00Z",
+      "read": false,
+      "type": "kyc",
+      "link": "/moderateur/kyc"
+    }
+  ]
+}

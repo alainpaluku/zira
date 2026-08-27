@@ -1,0 +1,12 @@
+name = "zira-invest-web"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = "dist"
+
+assets = { directory = "./dist" }
+
+[[r2_buckets]]
+binding = "ZIRA_ASSETS_BUCKET"
+bucket_name = "zira-invest-assets-rdc"
+
+[env.production]
+vars = { PUBLIC_R2_DOMAIN = "https://assets.zira-invest.cd" }

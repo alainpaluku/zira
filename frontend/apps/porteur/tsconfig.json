@@ -1,0 +1,20 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/lib/*": ["../../packages/shared/src/lib/*"],
+      "@/lib/hero-icons-compat": ["../../packages/ui/src/lib/hero-icons-compat.tsx"],
+      "@/components/*": ["../../packages/ui/src/components/*"],
+      "@/hooks/*": ["../../packages/ui/src/hooks/*"],
+      "@/contexts/*": ["../../packages/shared/src/contexts/*"],
+      "@/types": ["../../packages/shared/src/types.ts"],
+      "@/*": ["src/*"],
+      "@zira/shared": ["../../packages/shared/src/index.ts"],
+      "@zira/shared/*": ["../../packages/shared/src/*"],
+      "@zira/ui": ["../../packages/ui/src/index.ts"],
+      "@zira/ui/*": ["../../packages/ui/src/*"]
+    }
+  },
+  "include": ["src/**/*", "../../packages/ui/src/**/*", "../../packages/shared/src/**/*"]
+}
