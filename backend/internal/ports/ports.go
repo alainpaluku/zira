@@ -9,6 +9,9 @@ import (
 type UserRepository interface {
 	UpsertFromClerk(ctx context.Context, id, email, name, role string) (domain.User, error)
 	GetUser(ctx context.Context, id string) (domain.User, error)
+	GetUserByIdentifier(ctx context.Context, identifier string) (domain.User, error)
+	CreateUser(ctx context.Context, username, email, name, role, companyName string) (domain.User, error)
+	CheckUsernameAvailable(ctx context.Context, username string) (bool, error)
 	UpdateProfile(ctx context.Context, id string, input map[string]any) (domain.User, error)
 	ListUsers(ctx context.Context) ([]domain.User, error)
 	UpdateUserStatus(ctx context.Context, id, status string) (domain.User, error)
