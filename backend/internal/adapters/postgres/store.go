@@ -239,7 +239,7 @@ func (s *Store) CreateInvestment(ctx context.Context, investorID, projectID stri
 	equity = amount / targetAmount * offeredEquity
 	row := tx.QueryRowContext(ctx, `INSERT INTO investments (id, project_id, investor_id, amount_usd, equity_received, status)
 		SELECT $1, $2, $3, $4, $5, 'completed'
-		WHERE EXISTS (SELECT 1 FROM users WHERE clerk_id=$3 AND role='investisseur' AND kyc_status='approved')
+		WHERE EXISTS (SELECT 1 FROM users WHERE clerk_id=$3 AND status='active')
 		RETURNING id, project_id, investor_id, amount_usd, equity_received, status, created_at`, id, eligible, investorID, amount, equity)
 	var item domain.Investment
 	err = row.Scan(&item.ID,&item.ProjectID,&item.InvestorID,&item.AmountUSD,&item.EquityReceived,&item.Status,&item.CreatedAt)
