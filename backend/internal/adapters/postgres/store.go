@@ -55,6 +55,46 @@ func (s *Store) GetUser(ctx context.Context, id string) (domain.User, error) {
 		FROM users WHERE clerk_id = $1`, id))
 }
 
+func (s *Store) GetUserByIdentifier(ctx context.Context, identifier string) (domain.User, error) {
+	clean := strings.TrimSpace(strings.ToLower(identifier))
+	return scanUser(s.db.QueryRowContext(ctx, `
+		SELECT clerk_id, email, username, display_name, role, status, kyc_status,
+			title, bio, avatar_url, company_name, phone, country, city, profile_extras, created_at
+		FROM users WHERE LOWER(email) = $1 OR LOWER(username) = $1 OR clerk_id = $1`, clean))
+}
+
+func (s *Store) CreateUser(ctx context.Context, username, email, name, role, companyName string) (domain.User, error) {
+	id := "user_" + uuid.NewString()
+	cleanUsername := strings.TrimSpace(strings.ToLower(username))
+	cleanEmail := strings.TrimSpace(strings.ToLower(email))
+	if cleanUsername == "" {
+		cleanUsername = usernameFromEmail(cleanEmail, id)
+	}
+	if name == "" {
+		name = cleanUsername
+	}
+	if role == "" {
+		role = "investisseur"
+	}
+
+	const query = `
+		INSERT INTO users (clerk_id, email, username, display_name, role, company_name)
+		VALUES ($1, $2, $3, $4, $5, NULLIF($6, ''))
+		RETURNING clerk_id, email, username, display_name, role, status, kyc_status,
+			title, bio, avatar_url, company_name, phone, country, city, profile_extras, created_at`
+	return scanUser(s.db.QueryRowContext(ctx, query, id, cleanEmail, cleanUsername, name, role, companyName))
+}
+
+func (s *Store) CheckUsernameAvailable(ctx context.Context, username string) (bool, error) {
+	clean := strings.TrimSpace(strings.ToLower(username))
+	if clean == "" {
+		return false, nil
+	}
+	var exists bool
+	err := s.db.QueryRowContext(ctx, `SELECT EXISTS(SELECT 1 FROM users WHERE LOWER(username) = $1)`, clean).Scan(&exists)
+	return !exists, err
+}
+
 func (s *Store) ListUsers(ctx context.Context) ([]domain.User, error) {
 	rows, err := s.db.QueryContext(ctx, `SELECT clerk_id, email, username, display_name, role, status, kyc_status,
 		title, bio, avatar_url, company_name, phone, country, city, profile_extras, created_at

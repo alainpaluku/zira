@@ -37,13 +37,38 @@ function ConfigurationError() { return <main className="min-h-screen grid place-
 </section></main>; }
 
 export function PortalProviders({ children, publishableKey, apiBaseUrl }: PortalProvidersProps) {
-  if (!apiBaseUrl || !publishableKey?.startsWith("pk_")) return <ConfigurationError />;
-  return <ClerkProvider publishableKey={publishableKey}>
-    <ClerkSessionBridge />
-    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme"><LangProvider>
-      <AuthProvider><QueryClientProvider client={queryClient}>
-        <AppDataProvider><TooltipProvider>{children}<Toaster /></TooltipProvider></AppDataProvider>
-      </QueryClientProvider></AuthProvider>
-    </LangProvider></ThemeProvider>
-  </ClerkProvider>;
+  const effectiveApiBaseUrl = apiBaseUrl || import.meta.env.VITE_API_BASE_URL || "http://localhost:8080";
+  const hasClerkKey = Boolean(publishableKey?.startsWith("pk_"));
+
+  if (!effectiveApiBaseUrl && !hasClerkKey) {
+    return <ConfigurationError />;
+  }
+
+  const innerProviders = (
+    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+      <LangProvider>
+        <AuthProvider>
+          <QueryClientProvider client={queryClient}>
+            <AppDataProvider>
+              <TooltipProvider>
+                {children}
+                <Toaster />
+              </TooltipProvider>
+            </AppDataProvider>
+          </QueryClientProvider>
+        </AuthProvider>
+      </LangProvider>
+    </ThemeProvider>
+  );
+
+  if (hasClerkKey && publishableKey) {
+    return (
+      <ClerkProvider publishableKey={publishableKey}>
+        <ClerkSessionBridge />
+        {innerProviders}
+      </ClerkProvider>
+    );
+  }
+
+  return innerProviders;
 }

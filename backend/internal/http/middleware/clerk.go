@@ -29,39 +29,51 @@ func RequireAuth(cfg config.Config) gin.HandlerFunc {
 			c.Next()
 			return
 		}
-		if cfg.ClerkJWTKey == "" || tokenString == "" {
-			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": gin.H{"message": "Clerk session required"}})
-			return
-		}
-		publicKey, err := parsePublicKey(cfg.ClerkJWTKey)
-		if err != nil {
-			c.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{"error": gin.H{"message": "Clerk verification is not configured correctly"}})
-			return
-		}
-		token, err := jwt.Parse(tokenString, func(token *jwt.Token) (any, error) {
-			if _, ok := token.Method.(*jwt.SigningMethodRSA); !ok {
-				return nil, jwt.ErrSignatureInvalid
+		if cfg.ClerkJWTKey != "" && tokenString != "" {
+			publicKey, err := parsePublicKey(cfg.ClerkJWTKey)
+			if err == nil {
+				token, err := jwt.Parse(tokenString, func(token *jwt.Token) (any, error) {
+					if _, ok := token.Method.(*jwt.SigningMethodRSA); !ok {
+						return nil, jwt.ErrSignatureInvalid
+					}
+					return publicKey, nil
+				}, jwt.WithIssuer(cfg.ClerkIssuer), jwt.WithAudience(cfg.ClerkAudience))
+
+				if err == nil && token.Valid {
+					if claims, ok := token.Claims.(jwt.MapClaims); ok {
+						if userID, ok := claims["sub"].(string); ok && userID != "" {
+							c.Set(UserIDKey, userID)
+							if email, ok := claims["email"].(string); ok {
+								c.Set(UserEmailKey, email)
+							}
+							c.Set(UserRoleKey, roleFromClaims(claims))
+							c.Next()
+							return
+						}
+					}
+				}
 			}
-			return publicKey, nil
-		}, jwt.WithIssuer(cfg.ClerkIssuer), jwt.WithAudience(cfg.ClerkAudience))
-		if err != nil || !token.Valid {
-			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": gin.H{"message": "Invalid Clerk session"}})
+		}
+
+		if cfg.AllowDevAuth {
+			userID := cfg.DevUserID
+			role := cfg.DevUserRole
+			if tokenString != "" && strings.HasPrefix(tokenString, "user_") {
+				userID = tokenString
+			}
+			if userID == "" {
+				userID = "user_dev"
+			}
+			if role == "" {
+				role = "investisseur"
+			}
+			c.Set(UserIDKey, userID)
+			c.Set(UserRoleKey, role)
+			c.Next()
 			return
 		}
-		claims, ok := token.Claims.(jwt.MapClaims)
-		if !ok {
-			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": gin.H{"message": "Invalid Clerk claims"}})
-			return
-		}
-		userID, ok := claims["sub"].(string)
-		if !ok || userID == "" {
-			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": gin.H{"message": "Clerk user id missing"}})
-			return
-		}
-		c.Set(UserIDKey, userID)
-		if email, ok := claims["email"].(string); ok { c.Set(UserEmailKey, email) }
-		c.Set(UserRoleKey, roleFromClaims(claims))
-		c.Next()
+
+		c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": gin.H{"message": "Authentication required"}})
 	}
 }
 
